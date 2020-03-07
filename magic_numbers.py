@@ -12,9 +12,14 @@ if not, output "NONE". If the number is perfect, output "PERFECT". Sample input 
 a=int(18655744)
 def fac(n):
     b=0
-    for d in range(1,n):
+    d=1
+    max=int(n/2)
+    while d < n:
         if n%d == 0:
             b+=d
+            if d>=max:
+                break
+        d+=1
     return b
 b=fac(a)
 if a==b:
