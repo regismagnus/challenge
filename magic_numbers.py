@@ -8,24 +8,31 @@ Take an example, 220 and 284, the proper divisors of 220 are 1, 2, 4, 5, 10, 11,
 of which the sum is 284; and the proper divisors of 284 are 1, 2, 4, 71 and 142, of which the sum is 220.
 Your mission is to write a piece of script, to find the pair of given input. Output the amicable pair number if exists,
 if not, output "NONE". If the number is perfect, output "PERFECT". Sample input 220 Output 284
+
+Upgrade
+The divisors of 100 are: 
+1 2 4 5 10 20 25 50 100
+
+If we look carefully, all the divisors are present in pairs.
+For example if n = 100, then the various pairs of divisors are: (1,100), (2,50), (4,25), (5,20), (10,10)
 '''
-a=int(18655744)
-def fac(n):
-    b=0
-    d=1
-    max=int(n/2)
-    while d < n:
-        if n%d == 0:
-            b+=d
-            if d>=max:
-                break
-        d+=1
-    return b
-b=fac(a)
+import math
+def sob(n):
+    sum=0 
+    i=1
+    while i <= int(math.sqrt(n)):     
+        if (n%i==0):
+            sum +=i 
+            if (i!=1 and n/i!=i) : 
+                 sum+=n/i 
+        i+=1
+    return sum
+a=int(100485)
+b=sob(a)
 if a==b:
     print("PERFECT")
 else: 
-    if a == fac(b):
+    if a == sob(b):
         print(b)
     else:
         print("NONE")
