@@ -1,4 +1,6 @@
 '''
+find the first no sequential repeating character
+
 inputs ex
 aaabcccdeeef
 abcbad
