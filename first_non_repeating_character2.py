@@ -21,7 +21,6 @@ def firstNotRepeatingCharacter(s):
             l[s[i]]+=1
         else:
             l[s[i]]=1
-    print(l)       
     for i in l:
         if l[i]==1:
             return i
