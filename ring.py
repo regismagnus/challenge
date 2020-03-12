@@ -6,7 +6,7 @@ He started turning the first ring and noticed that the other rings turned as wel
 Help Sam to count how many times the other rings turn while the first ring turns once.
 
 INPUT
-The first line of input contains an integer N (3 ≤ N ≤ 100), 
+The first line of input contains an integer, 
 the number of rings. The next line contains N integers between 1 and 1000, the radiuses of Sam rings, 
 in the order they are laid out on the floor.
 
@@ -20,8 +20,7 @@ r=map(int, "16 676 766 611 73".split())
 
 for i in range(1, n):
     f=1
-    rf=r[0]/r[i]
     while (r[0]*f)%r[i]!=0:
         f+=1
-        rf=r[0]*f/r[i]
+    rf=r[0]*f/r[i]
     print(str(rf)+"/"+str(f))
