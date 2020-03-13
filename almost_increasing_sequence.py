@@ -28,18 +28,14 @@ def almostIncreasingSequence(sequence):
                 return False
             else:
                 removed=True
-                if i>0 and sequence[i-1]>=sequence[i+1]:
+                if i>0 and (sequence[i-1]>=sequence[i+1] or (i>=n-2 or sequence[i]<sequence[i+2])):
                     del sequence[i+1]
-                elif i==0:
-                    del sequence[0]
                 else:
-                    if i<n-2 and sequence[i]>=sequence[i+2]:
-                        del sequence[i]
-                    else:
-                        del sequence[i+1]
+                    del sequence[i]
                 i-=1
         i+=1    
     return True
+print(almostIncreasingSequence([1, 30, 2, 3]))#True
 print(almostIncreasingSequence([1, 3, 2, 1]))#False
 print(almostIncreasingSequence([1, 2, 5, 3, 5]))#True
 print(almostIncreasingSequence([10, 1, 2, 3, 4, 5]))#True
